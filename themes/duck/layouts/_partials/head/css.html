@@ -2,6 +2,7 @@
   {{- $opts := dict
     "minify" (cond hugo.IsDevelopment false true)
     "sourceMap" (cond hugo.IsDevelopment "linked" "none")
+    "externals" (slice "/fonts/*")
   }}
   {{- with . | css.Build $opts }}
     {{- if hugo.IsDevelopment }}
