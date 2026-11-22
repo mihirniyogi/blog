@@ -2,3 +2,6 @@ baseURL = "https://blog.mihirniyogi.com/"
 locale = "en-us"
 title = "Mihir's Blog"
 theme = "duck"
+
+[pagination]
+  perPage = 5
