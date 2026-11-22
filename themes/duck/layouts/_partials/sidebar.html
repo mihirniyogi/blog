@@ -1,1 +1,46 @@
-<p>Insert sidebar</p>
+{{ if and .IsPage (in .TableOfContents "<li") }}
+<section class="box">
+    <h2>On this page</h2>
+    <div class="box-body toc">{{ .TableOfContents }}</div>
+</section>
+{{ end }}
+
+<section class="box">
+    <h2>About</h2>
+    <div class="box-body">
+        {{ with site.Params.about }}<p>{{ . }}</p>{{ end }}
+    </div>
+</section>
+
+{{ with site.Taxonomies.tags }}
+<section class="box">
+    <h2>Tags</h2>
+    <div class="box-body">
+        <ul>
+            {{ range .ByCount }}
+            <li><a href="{{ .Page.RelPermalink }}">{{ .Name }}</a> <span class="count">({{ .Count }})</span></li>
+            {{ end }}
+        </ul>
+    </div>
+</section>
+{{ end }}
+
+<section class="box">
+    <h2>Archive</h2>
+    <div class="box-body">
+        <ul>
+            {{ range (where site.RegularPages "Section" "posts").GroupByDate "January 2006" }}
+            <li><a href="{{ "posts/" | relURL }}#{{ (index .Pages 0).Date.Format "2006" }}">{{ .Key }}</a> <span class="count">({{ len .Pages }})</span></li>
+            {{ end }}
+        </ul>
+    </div>
+</section>
+
+{{ with site.Home.OutputFormats.Get "rss" }}
+<section class="box">
+    <h2>Subscribe</h2>
+    <div class="box-body">
+        <a href="{{ .RelPermalink }}">Subscribe via RSS</a>
+    </div>
+</section>
+{{ end }}

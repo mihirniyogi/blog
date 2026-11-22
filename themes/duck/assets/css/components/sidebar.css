@@ -1,0 +1,38 @@
+.box {
+    border: 1px solid var(--border-divider);
+    margin-bottom: 22px;
+}
+
+.box h2 {
+    margin: 0;
+    padding: 8px 14px;
+    background: var(--sidebar-header-bg);
+    border-bottom: 1px solid var(--border-divider);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--heading);
+}
+
+.box-body {
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.box-body p { margin: 0; }
+
+.box-body ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.toc ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.toc ul ul { padding-left: 16px; }
+
+.count { color: var(--muted); }
