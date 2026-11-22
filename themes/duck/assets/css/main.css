@@ -116,3 +116,21 @@ a {
 a:hover {
     color: var(--accent-hover);
 }
+
+.site {
+    width: min( calc(100% - 24px),  max(75%, 680px),  1480px );
+    margin: 32px auto 40px;
+    background: var(--surface-bg);
+    border: 1px solid var(--border-divider);
+}
+
+.layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 36px 48px;
+    padding: 36px;
+}
+
+.content { flex: 999 1 560px; min-width: 0; }
+.sidebar { flex: 1 1 240px; min-width: 0; }

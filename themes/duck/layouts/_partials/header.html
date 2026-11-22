@@ -1,2 +1,4 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<div class="brand">
+  <a class="site-title" href="{{ "/" | relURL }}">{{ site.Title }}</a>
+  {{ with site.Params.description }}<p class="tagline">{{ . }}</p>{{ end }}
+</div>
