@@ -1,1 +1,4 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+<p>Copyright © {{ now.Year }} {{ site.Params.author }}</p>
+<p> Powered by Hugo · Self-hosted · {{- with site.Home.OutputFormats.Get "rss" }}
+    <a href="{{ .RelPermalink }}">RSS</a> {{ end }}
+</p>
