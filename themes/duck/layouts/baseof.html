@@ -4,14 +4,37 @@
   {{ partial "head.html" . }}
 </head>
 <body>
-  <header>
-    {{ partial "header.html" . }}
-  </header>
-  <main>
-    {{ block "main" . }}{{ end }}
-  </main>
+
+  <div class="site">
+
+    <header class="band">
+      {{ partial "header.html" . }}
+    </header>
+
+    <div class="tabs">
+      {{ partial "menu.html" (dict "menuID" "main" "page" .)}}
+    </div>
+
+    <div class="layout">
+
+      <main class="content">
+        {{ block "main" . }}{{ end }}
+      </main>
+
+      <aside class="sidebar">
+        {{ partial "sidebar.html" . }}
+      </aside>
+
+    </div>
+
+    <footer class="site-footer">
+      {{ partial "footer.html" . }}
+    </footer>
+
+  </div>
+
   <footer>
-    {{ partial "footer.html" . }}
+    
   </footer>
 </body>
 </html>
