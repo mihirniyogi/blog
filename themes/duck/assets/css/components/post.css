@@ -1,5 +1,17 @@
 /* ------ Post header ------ */
 
+.post { max-width: 780px; }
+
+.breadcrumb {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); text-decoration: underline; }
+
 .post-title {
     margin: 0 0 12px;
     font-size: 38px;
@@ -107,3 +119,6 @@
 .end-mark { display: flex; align-items: center; gap: 14px; margin-top: 32px; color: var(--muted); }
 .end-mark::before, .end-mark::after { content: ""; flex: 1; border-top: 1px dotted var(--border-divider); }
 .end-mark .duck { width: 26px; height: 22px; }
+
+/* Back link */
+.back-link { margin: 24px 0 0; font-size: 14px; font-weight: 600; }

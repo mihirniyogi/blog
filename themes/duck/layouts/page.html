@@ -3,14 +3,15 @@
 <article class="post">
 
   <header>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ "/" | relURL }}">Home</a>
+      {{- with .GetTerms "tags" }}{{ with index . 0 }} › <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}{{ end }}
+    </nav>
     <h1 class="post-title">{{ .Title }}</h1>
     <p class="post-meta">
-        Posted on <time datetime="{{ .Date.Format "2006-01-02" }}" >{{ .Date.Format "2 January 2006" }}</time>
-        · {{ .ReadingTime }} min read
-        {{- with .GetTerms "tags" }} · Filed under 
-          {{- range $i, $tag := . }}{{ if $i }},{{ end }} <a href="{{ $tag.RelPermalink }}">{{ $tag.LinkTitle }}</a>{{ end }}
-        {{- end}}
-
+      Posted on <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+      · {{ .ReadingTime }} min read
+      {{- if .GetTerms "tags" }} · Filed under {{ partial "post-tags.html" (dict "page" .) }}{{ end }}
     </p>
   </header>
 
@@ -19,8 +20,10 @@
   </div>
 
   <div class="end-mark" role="img" aria-label="End of post">
-    {{ with resources.Get "icons/duck.svg" }}{{ .Content | safeHTML }}{{ end }}
+    {{ partial "icon.html" "duck" }}
   </div>
+
+  <p class="back-link"><a href="{{ "/" | relURL }}">← Back to all posts</a></p>
 
   {{ if or .PrevInSection .NextInSection }}
   <nav class="post-nav" aria-label="More posts">
