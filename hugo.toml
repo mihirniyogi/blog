@@ -5,7 +5,7 @@ theme = "duck"
 capitalizeListTitles = false
 
 [pagination]
-  perPage = 5
+  pagerSize = 5
 
 [params]
   description = "Notes from a home server"
