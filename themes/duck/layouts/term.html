@@ -1,7 +1,5 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
+<h1 class="list-title">{{ .Title }}</h1>
+<p class="list-intro">{{ len .RegularPages }} {{ cond (eq (len .RegularPages) 1) "post" "posts" }} tagged “{{ .Title }}”, newest first.</p>
+{{ partial "post-timeline.html" .RegularPages }}
 {{ end }}

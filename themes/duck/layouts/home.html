@@ -1,9 +1,31 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <section>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </section>
-  {{ end }}
+<h1 class="visually-hidden">Latest posts</h1>
+
+{{ $pager := .Paginate (where site.RegularPages "Section" "posts") }}
+{{ $lastDay := "" }}
+
+
+{{ range $pager.Pages }}
+  {{ $day := .Date.Format "2006-01-02" }}
+  <article class="entry">
+    
+    {{ if ne $day $lastDay }}
+      <p class="entry-date"><time datetime="{{ $day }}">{{ .Date.Format "Monday, 2 January 2006" }}</time></p>
+    {{ end }}
+    {{ $lastDay = $day }}
+
+    <h2 class="entry-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    <div class="entry-summary">{{ .Summary }}</div>
+    <p class="entry-meta">
+      {{- if .GetTerms "tags" }}Tags: {{ partial "post-tags.html" (dict "page" .) }} · {{ end -}}
+      <a href="{{ .RelPermalink }}">Read more »</a>
+    </p>
+
+  </article>
+
+
+{{ end }}
+
+{{ partial "pagination.html" $pager }}
+
 {{ end }}

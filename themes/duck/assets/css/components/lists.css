@@ -1,0 +1,16 @@
+/* ------ Headings on list pages (Posts, tag pages) ------ */
+
+.list-title {
+  margin: 0 0 6px;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+}
+
+.list-intro {
+  margin: 0 0 28px;
+  font-size: 15px;
+  color: var(--muted);
+}

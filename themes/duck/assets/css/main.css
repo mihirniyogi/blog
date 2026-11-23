@@ -1,5 +1,9 @@
 @import "components/header.css";
 @import "components/nav.css";
+@import "components/home.css";
+@import "components/pagination.css";
+@import "components/lists.css";
+@import "components/timeline.css";
 @import "components/duck.css";
 @import "components/post.css";
 @import "components/callouts.css";
@@ -140,6 +144,11 @@ a:hover {
 .content { flex: 999 1 560px; min-width: 0; }
 .sidebar { flex: 1 1 240px; min-width: 0; }
 
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
 /* ---------- Small screens ---------- */
 @media (max-width: 640px) {
   .site { margin: 0 auto; border-left: none; border-right: none; width: 100%; }
@@ -151,4 +160,6 @@ a:hover {
   .site-footer { padding: 14px 20px; }
   .post-title { font-size: 30px; }
   .prose h2 { font-size: 21px; }
+  .entry-title { font-size: 24px; }
+  .list-title { font-size: 28px; }
 }

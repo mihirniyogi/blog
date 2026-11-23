@@ -1,0 +1,15 @@
+.entry {
+  padding-bottom: 28px; margin-bottom: 28px;
+  border-bottom: 1px dotted var(--border-divider);
+}
+.entry-date {
+  margin: 0 0 8px; font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+}
+.entry-title { margin: 0 0 12px; font-size: 28px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; }
+.entry-title a { color: var(--heading); text-decoration: none; }
+.entry-title a:hover { color: var(--accent); text-decoration: underline; }
+.entry-summary { font-size: 17px; line-height: 1.75; margin-bottom: 14px; }
+.entry-summary p { margin: 0 0 14px; }
+.entry-summary p:last-child { margin-bottom: 0; }
+.entry-meta { margin: 0; font-size: 13px; color: var(--muted); }

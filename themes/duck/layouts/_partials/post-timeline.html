@@ -1,0 +1,22 @@
+{{- /*
+  Timeline of posts grouped by month, newest first.
+  Usage: {{ partial "post-timeline.html" .RegularPages }}
+*/ -}}
+<ol class="tl">
+  {{- range $i, $month := .GroupByDate "January 2006" }}
+  <li class="tl-month" id="{{ (index .Pages 0).Date.Format "2006-01" }}"><span>{{ .Key }}</span></li>
+    {{- range $j, $post := .Pages }}
+  <li class="tl-post{{ if and (eq $i 0) (eq $j 0) }} latest{{ end }}">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time>
+    <a class="tl-title" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{- if .GetTerms "tags" }}
+    <span class="tl-tags">{{ partial "post-tags.html" (dict "page" . "sep" " · ") }}</span>
+    {{- end }}
+  </li>
+    {{- end }}
+  {{- end }}
+  <li class="tl-end">
+    {{ partial "icon.html" "duck" }}
+    <span>Where it all began</span>
+  </li>
+</ol>

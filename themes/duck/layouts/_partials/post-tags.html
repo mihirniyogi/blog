@@ -1,0 +1,10 @@
+{{- /*
+  Links to a page's tags.
+  Usage: {{ partial "post-tags.html" (dict "page" . "sep" " · ") }}
+  "sep" is optional and defaults to ", ".
+*/ -}}
+{{- $sep := .sep | default ", " -}}
+{{- range $i, $tag := .page.GetTerms "tags" -}}
+  {{- if $i }}{{ $sep }}{{ end -}}
+  <a href="{{ $tag.RelPermalink }}">{{ $tag.LinkTitle }}</a>
+{{- end -}}

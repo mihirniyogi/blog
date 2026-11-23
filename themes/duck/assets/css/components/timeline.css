@@ -1,0 +1,67 @@
+/* ------ Post timeline (partial: post-timeline.html) ------ */
+
+.tl {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 30px;
+}
+
+/* The vertical line */
+.tl::before {
+  content: "";
+  position: absolute;
+  left: 7px; top: 6px; bottom: 6px;
+  border-left: 2px solid var(--border-divider);
+}
+
+/* Month markers */
+.tl-month { position: relative; margin: 6px 0 14px; }
+.tl-month span {
+  display: inline-block;
+  padding: 2px 10px;
+  background: var(--sidebar-header-bg);
+  border: 1px solid var(--border-divider);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--heading);
+}
+
+/* Posts, each with a dot on the line */
+.tl-post { position: relative; padding: 0 0 20px; }
+.tl-post::before {
+  content: "";
+  position: absolute;
+  left: -28px; top: 7px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--surface-bg);
+  border: 2px solid var(--accent);
+}
+.tl-post.latest::before { background: var(--bill); border-color: var(--bill); }
+
+.tl-post time { display: block; font-size: 12.5px; color: var(--muted); }
+.tl-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--heading);
+  text-decoration: none;
+}
+.tl-title:hover { color: var(--accent); text-decoration: underline; }
+.tl-tags { display: block; font-size: 13px; color: var(--muted); }
+
+/* The duck at the start of time */
+.tl-end {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: -38px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--muted);
+}
+.tl-end .duck { width: 28px; height: 24px; flex: none; background: var(--surface-bg); }
