@@ -1,7 +1,7 @@
 {{- /*
   Decides which sidebar boxes each kind of page gets.
   - Single pages (posts): only the contents list, and only if there are headings.
-  - Everything else: About, Tags, Archive (not on the Posts page itself), Subscribe.
+  - Everything else: About, Tags (not on the Tags page), Archive (not on the Posts page), Subscribe.
 */ -}}
 {{- if .IsPage }}
   {{- if in .TableOfContents "<li" }}
@@ -12,7 +12,9 @@
 {{- else }}
 <aside class="sidebar">
   {{ partial "sidebar/about.html" . }}
+  {{- if ne .Kind "taxonomy" }}
   {{ partial "sidebar/tags.html" . }}
+  {{- end }}
   {{- if ne .Kind "section" }}
   {{ partial "sidebar/archive.html" . }}
   {{- end }}

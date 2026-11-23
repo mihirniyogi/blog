@@ -1,7 +1,27 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
+{{- $perBox := 5 }}
+<h1 class="list-title">{{ .Title }}</h1>
+<p class="list-intro">{{ len .Data.Terms }} tags, most-used first. Each box lists its newest posts.</p>
+
+<div class="topics">
+  {{- range .Data.Terms.ByCount }}
+  <section class="topic">
+    <h2>
+      <a href="{{ .Page.RelPermalink }}">{{ .Name }}</a>
+      <span>{{ .Count }} {{ cond (eq .Count 1) "post" "posts" }}</span>
+    </h2>
+    <ul>
+      {{- range first $perBox .Pages.ByDate.Reverse }}
+      <li>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan" }}</time>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      </li>
+      {{- end }}
+    </ul>
+    {{- if gt .Count $perBox }}
+    <a class="topic-more" href="{{ .Page.RelPermalink }}">All {{ .Count }} posts →</a>
+    {{- end }}
+  </section>
+  {{- end }}
+</div>
 {{ end }}
