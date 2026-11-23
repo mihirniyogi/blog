@@ -4,7 +4,7 @@
   {{- if eq $type "important" }}{{ $style = "note" }}{{ end -}}
   {{- if eq $type "caution" }}{{ $style = "warning" }}{{ end -}}
   <div class="callout callout-{{ $style }}" role="note">
-    <p class="callout-label">{{ with resources.Get (printf "icons/%s.svg" $style) }}{{ .Content | safeHTML }}{{ end }}{{ $type | title }}</p>
+    <p class="callout-label">{{ partial "icon.html" $style }}{{ $type | title }}</p>
     {{ .Text }}
   </div>
 {{- else -}}

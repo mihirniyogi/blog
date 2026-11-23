@@ -1,0 +1,5 @@
+{{- /*
+  Inlines an SVG icon from assets/icons/.
+  Usage: {{ partial "icon.html" "duck" }}
+*/ -}}
+{{- with resources.Get (printf "icons/%s.svg" .) }}{{ .Content | safeHTML }}{{ end -}}
