@@ -1,0 +1,12 @@
+.callout { border: 1px solid; padding: 14px 20px 4px; margin: 1.5em 0; font-size: 16px; line-height: 1.65; }
+.callout p { margin: 0 0 .8em; }
+.callout .callout-label {
+  display: flex; align-items: center; gap: 8px; margin: 0 0 6px;
+  font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+}
+.callout-note    { background: var(--note-bg); border-color: var(--note-border); }
+.callout-note    .callout-label { color: var(--note-label); }
+.callout-tip     { background: var(--tip-bg);  border-color: var(--tip-border); }
+.callout-tip     .callout-label { color: var(--tip-label); }
+.callout-warning { background: var(--warn-bg); border-color: var(--warn-border); }
+.callout-warning .callout-label { color: var(--warn-label); }
