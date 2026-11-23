@@ -18,6 +18,10 @@
     {{ .Content }}
   </div>
 
+  <div class="end-mark" role="img" aria-label="End of post">
+    {{ with resources.Get "icons/duck.svg" }}{{ .Content | safeHTML }}{{ end }}
+  </div>
+
   {{ if or .PrevInSection .NextInSection }}
   <nav class="post-nav" aria-label="More posts">
     {{ with .PrevInSection }}<a href="{{ .RelPermalink }}">« {{ .LinkTitle }}</a>{{ else }}<span></span>{{ end }}

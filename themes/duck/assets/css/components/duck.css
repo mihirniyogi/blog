@@ -1,0 +1,7 @@
+.duck-bill { fill: var(--bill); }
+.duck-eye  { fill: var(--duck-detail, var(--surface-bg)); }
+.duck-wing {
+  fill: none;
+  stroke: var(--duck-detail, var(--surface-bg));
+  stroke-width: 1.8; stroke-linecap: round;
+}

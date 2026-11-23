@@ -1,0 +1,8 @@
+<svg class="duck" viewBox="0 0 48 40" aria-hidden="true">
+  <path d="M6 24 L1 18 L10 21 Z" fill="currentColor"/>
+  <ellipse cx="22" cy="27" rx="17" ry="10" fill="currentColor"/>
+  <circle cx="32" cy="12" r="7.5" fill="currentColor"/>
+  <path class="duck-bill" d="M38.5 10 L47 12.5 L38.5 15.5 Z"/>
+  <circle class="duck-eye" cx="34" cy="10.5" r="1.4"/>
+  <path class="duck-wing" d="M13 26 C17 31 25 31 30 26"/>
+</svg>

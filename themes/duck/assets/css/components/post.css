@@ -26,7 +26,6 @@
 
 .prose p { margin: 0 0 1.1em; }
 
-/* Headings */
 .prose h2 {
     font-size: 24px;
     font-weight: 700;
@@ -45,7 +44,6 @@
     margin: 1.5em 0 .45em;
 }
 
-/* General text */
 .prose ul, .prose ol { margin: 0 0 1.2em; padding-left: 1.4em; }
 .prose li { margin: .3em 0; }
 .prose strong { font-weight: 600; }
@@ -104,3 +102,8 @@
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
   font-size: 14px;
 }
+
+/* End of post - duck logo */
+.end-mark { display: flex; align-items: center; gap: 14px; margin-top: 32px; color: var(--muted); }
+.end-mark::before, .end-mark::after { content: ""; flex: 1; border-top: 1px dotted var(--border-divider); }
+.end-mark .duck { width: 26px; height: 22px; }
