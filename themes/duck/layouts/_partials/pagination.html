@@ -1,7 +1,33 @@
-{{ if gt .TotalPages 1 }}
+{{- /*
+  Numbered pagination for a list.
+  Usage: {{ partial "pagination.html" $pager }}  (where $pager := .Paginate ...)
+  Page 1 holds the newest posts, so "Previous" moves towards newer posts.
+*/ -}}
+{{- if gt .TotalPages 1 }}
 <nav class="pager" aria-label="Pagination">
-  {{ with .Prev }}<a href="{{ .URL }}">« Newer posts</a>{{ else }}<span class="pager-off">« Newer posts</span>{{ end }}
-  <span class="pager-off">Page {{ .PageNumber }} of {{ .TotalPages }}</span>
-  {{ with .Next }}<a href="{{ .URL }}">Older posts »</a>{{ else }}<span class="pager-off">Older posts »</span>{{ end }}
+  {{- with .Prev }}
+  <a class="pager-step" href="{{ .URL }}" rel="prev">‹ Previous</a>
+  {{- else }}
+  <span class="pager-step is-off">‹ Previous</span>
+  {{- end }}
+
+  <ol class="pager-pages">
+    {{- $current := .PageNumber }}
+    {{- range .Pagers }}
+    <li>
+      {{- if eq .PageNumber $current }}
+      <span class="pager-num is-current" aria-current="page">{{ .PageNumber }}</span>
+      {{- else }}
+      <a class="pager-num" href="{{ .URL }}" aria-label="Page {{ .PageNumber }}">{{ .PageNumber }}</a>
+      {{- end }}
+    </li>
+    {{- end }}
+  </ol>
+
+  {{- with .Next }}
+  <a class="pager-step" href="{{ .URL }}" rel="next">Next ›</a>
+  {{- else }}
+  <span class="pager-step is-off">Next ›</span>
+  {{- end }}
 </nav>
-{{ end }}
+{{- end }}
