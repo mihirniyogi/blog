@@ -1,5 +1,8 @@
 <div class="brand">
   {{ with resources.Get "icons/duck.svg" }}{{ .Content | safeHTML }}{{ end }}
-  <a class="site-title" href="{{ "/" | relURL }}">{{ site.Title }}</a>
-  {{ with site.Params.description }}<p class="tagline">{{ . }}</p>{{ end }}
+  
+  <div>
+    <a class="site-title" href="{{ "/" | relURL }}">{{ site.Title }}</a>
+    {{ with site.Params.description }}<p class="tagline">{{ . }}</p>{{ end }}
+  </div>
 </div>
