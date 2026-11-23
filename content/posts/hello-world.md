@@ -1,9 +1,13 @@
 +++
-date = '2026-11-22T00:40:32+08:00'
+date = '2026-11-15T10:00:00+08:00'
 draft = true
-title = 'Hello World'
-tags = ['rock5b', 'hugo']
+title = 'Formatting test page'
+tags = ['meta']
 +++
+
+A kitchen-sink page for checking every kind of formatting the theme supports: headings, lists, quotes, code, tables, callouts and footnotes.
+
+<!--more-->
 
 Intro paragraph with some `inline code` and **bold text**.
 
