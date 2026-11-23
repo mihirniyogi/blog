@@ -1,5 +1,6 @@
 @import "components/header.css";
 @import "components/nav.css";
+@import "components/post.css";
 @import "components/sidebar.css";
 @import "components/footer.css";
 
@@ -136,3 +137,16 @@ a:hover {
 
 .content { flex: 999 1 560px; min-width: 0; }
 .sidebar { flex: 1 1 240px; min-width: 0; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 640px) {
+  .site { margin: 0 auto; border-left: none; border-right: none; width: 100%; }
+  .band { padding: 18px 20px; }
+  .site-title { font-size: 28px; }
+  .tabs { padding: 6px 12px 0; }
+  .tabs a { padding: 10px 12px; }
+  .layout { padding: 22px 20px; gap: 28px; }
+  .site-footer { padding: 14px 20px; }
+  .post-title { font-size: 30px; }
+  .prose h2 { font-size: 21px; }
+}

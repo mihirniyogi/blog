@@ -1,10 +1,30 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
 
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+<article class="post">
 
-  {{ .Content }}
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  <header>
+    <h1 class="post-title">{{ .Title }}</h1>
+    <p class="post-meta">
+        Posted on <time datetime="{{ .Date.Format "2006-01-02" }}" >{{ .Date.Format "2 January 2006" }}</time>
+        · {{ .ReadingTime }} min read
+        {{- with .GetTerms "tags" }} · Filed under 
+          {{- range $i, $tag := . }}{{ if $i }},{{ end }} <a href="{{ $tag.RelPermalink }}">{{ $tag.LinkTitle }}</a>{{ end }}
+        {{- end}}
+
+    </p>
+  </header>
+
+  <div class="prose">
+    {{ .Content }}
+  </div>
+
+  {{ if or .PrevInSection .NextInSection }}
+  <nav class="post-nav" aria-label="More posts">
+    {{ with .PrevInSection }}<a href="{{ .RelPermalink }}">« {{ .LinkTitle }}</a>{{ else }}<span></span>{{ end }}
+    {{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }} »</a>{{ end }}
+  </nav>
+  {{ end }}
+
+</article>
+
 {{ end }}
