@@ -1,0 +1,12 @@
+{{- with site.Taxonomies.tags }}
+<section class="box">
+  <h2>Tags</h2>
+  <div class="box-body">
+    <ul>
+      {{- range .ByCount }}
+      <li><a href="{{ .Page.RelPermalink }}">{{ .Name }}</a> <span class="count">({{ .Count }})</span></li>
+      {{- end }}
+    </ul>
+  </div>
+</section>
+{{- end }}

@@ -36,3 +36,6 @@
 .toc ul ul { padding-left: 16px; }
 
 .count { color: var(--muted); }
+
+/* The contents list follows you down a long post */
+.toc-box { position: sticky; top: 20px; }

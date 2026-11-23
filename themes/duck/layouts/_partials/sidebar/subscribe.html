@@ -1,0 +1,6 @@
+{{- with site.Home.OutputFormats.Get "rss" }}
+<section class="box">
+  <h2>Subscribe</h2>
+  <div class="box-body"><a href="{{ .RelPermalink }}">Subscribe via RSS</a></div>
+</section>
+{{- end }}
