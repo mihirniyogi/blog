@@ -1,0 +1,20 @@
+{{- /*
+  Compact list of posts grouped by year, newest first.
+  Usage: {{ partial "post-list.html" .RegularPages }}
+*/ -}}
+{{- range .GroupByDate "2006" }}
+<section class="year" aria-labelledby="{{ .Key }}">
+  <h2 class="year-title" id="{{ .Key }}">{{ .Key }}</h2>
+  <ul class="plist">
+    {{- range .Pages }}
+    <li>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan" }}</time>
+      <a class="plist-title" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{- if .GetTerms "tags" }}
+      <span class="plist-tags">{{ partial "post-tags.html" (dict "page" . "sep" " · ") }}</span>
+      {{- end }}
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}

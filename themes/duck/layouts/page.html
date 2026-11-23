@@ -3,10 +3,6 @@
 <article class="post">
 
   <header>
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="{{ "/" | relURL }}">Home</a>
-      {{- with .GetTerms "tags" }}{{ with index . 0 }} › <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}{{ end }}
-    </nav>
     <h1 class="post-title">{{ .Title }}</h1>
     <p class="post-meta">
       Posted on <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
@@ -23,14 +19,12 @@
     {{ partial "icon.html" "duck" }}
   </div>
 
-  <p class="back-link"><a href="{{ "/" | relURL }}">← Back to all posts</a></p>
-
-  {{ if or .PrevInSection .NextInSection }}
+  {{/* Older post · Home · Newer post. Always shown, so there's always a way home. */}}
   <nav class="post-nav" aria-label="More posts">
-    {{ with .PrevInSection }}<a href="{{ .RelPermalink }}">« {{ .LinkTitle }}</a>{{ else }}<span></span>{{ end }}
-    {{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }} »</a>{{ end }}
+    <span class="post-nav-older">{{ with .PrevInSection }}<a href="{{ .RelPermalink }}">« {{ .LinkTitle }}</a>{{ end }}</span>
+    <a class="post-nav-home" href="{{ "/" | relURL }}">Home</a>
+    <span class="post-nav-newer">{{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }} »</a>{{ end }}</span>
   </nav>
-  {{ end }}
 
 </article>
 

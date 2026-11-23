@@ -1,4 +1,4 @@
-{{- /* Months link to their section of the timeline on the Posts page. */ -}}
+{{- /* Months link to their year on the Posts page. */ -}}
 {{- $postsURL := "" }}
 {{- with site.GetPage "/posts" }}{{ $postsURL = .RelPermalink }}{{ end }}
 {{- with where site.RegularPages "Section" "posts" }}
@@ -7,7 +7,7 @@
   <div class="box-body">
     <ul>
       {{- range .GroupByDate "January 2006" }}
-      <li><a href="{{ $postsURL }}#{{ (index .Pages 0).Date.Format "2006-01" }}">{{ .Key }}</a> <span class="count">({{ len .Pages }})</span></li>
+      <li><a href="{{ $postsURL }}#{{ (index .Pages 0).Date.Format "2006" }}">{{ .Key }}</a> <span class="count">({{ len .Pages }})</span></li>
       {{- end }}
     </ul>
   </div>

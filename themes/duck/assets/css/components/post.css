@@ -2,16 +2,6 @@
 
 .post { max-width: 780px; }
 
-.breadcrumb {
-  margin: 0 0 10px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-}
-.breadcrumb a { color: var(--muted); text-decoration: none; }
-.breadcrumb a:hover { color: var(--accent); text-decoration: underline; }
-
 .post-title {
     margin: 0 0 12px;
     font-size: 38px;
@@ -108,17 +98,18 @@
 .prose .footnotes { margin-top: 36px; font-size: 13px; color: var(--muted); }
 .prose .footnotes hr { border: none; border-top: 1px dotted var(--border-divider); }
 
+/* Older · Home · Newer bar. Three equal-ish columns keep "Home" centred
+   whether or not the older/newer links exist. */
 .post-nav {
   margin-top: 28px; padding: 14px 16px;
   background: var(--sidebar-header-bg); border: 1px solid var(--border-divider);
-  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px;
   font-size: 14px;
 }
+.post-nav-home { font-weight: 600; }
+.post-nav-newer { text-align: right; }
 
 /* End of post - duck logo */
 .end-mark { display: flex; align-items: center; gap: 14px; margin-top: 32px; color: var(--muted); }
 .end-mark::before, .end-mark::after { content: ""; flex: 1; border-top: 1px dotted var(--border-divider); }
 .end-mark .duck { width: 26px; height: 22px; }
-
-/* Back link */
-.back-link { margin: 24px 0 0; font-size: 14px; font-weight: 600; }
