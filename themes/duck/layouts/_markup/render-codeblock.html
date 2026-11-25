@@ -1,0 +1,6 @@
+{{- /*
+  Renders every fenced code block as plain <pre><code>, with no syntax
+  highlighting, so code always uses the theme's own style (components/prose.css).
+  The language (e.g. ```nginx) is kept as a class for reference only.
+*/ -}}
+<pre><code{{ with .Type }} class="language-{{ . }}" data-lang="{{ . }}"{{ end }}>{{ .Inner }}</code></pre>

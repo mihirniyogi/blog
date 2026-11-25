@@ -15,7 +15,9 @@
     {{ $lastDay = $day }}
 
     <h2 class="entry-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    <div class="entry-summary">{{ .Summary }}</div>
+    {{- /* Plain-text excerpt: no code boxes or formatting, capped in length,
+           so every entry looks the same whatever the post contains. */}}
+    <p class="entry-summary">{{ .Summary | plainify | htmlUnescape | strings.TrimSpace | truncate 280 }}</p>
     <p class="entry-meta">
       {{- if .GetTerms "tags" }}Tags: {{ partial "posts/tags.html" (dict "page" .) }} · {{ end -}}
       <a href="{{ .RelPermalink }}">Read more »</a>
