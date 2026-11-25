@@ -1,0 +1,40 @@
+/* ------ Subscribe page (subscribe.html) ------ */
+
+.page { max-width: 720px; }
+
+.feed-box {
+  margin: 0 0 28px;
+  padding: 16px 20px;
+  background: var(--note-bg);
+  border: 1px solid var(--note-border);
+}
+
+.feed-label {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--note-label);
+}
+
+.feed-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+}
+
+.feed-url {
+  flex: 1 1 280px;
+  min-width: 0;
+  padding: 8px 12px;
+  background: var(--surface-bg);
+  border: 1px solid var(--border-divider);
+  font-family: var(--mono);
+  font-size: 13px;
+  word-break: break-all;
+  user-select: all;   /* one click selects the whole address */
+}
+
+.feed-open { font-size: 14px; font-weight: 600; }

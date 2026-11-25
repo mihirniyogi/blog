@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+<article class="page">
+    <header class="post-header">
+      <p class="post-kicker">RSS</p>
+      <h1 class="post-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="post-meta">{{ . }}</p>{{ end }}
+    </header>
+
+    {{ with site.Home.OutputFormats.Get "rss" }}
+    <section class="feed-box" aria-label="Feed address">
+      <p class="feed-label">Feed address</p>
+      <div class="feed-row">
+        <code class="feed-url">{{ .Permalink }}</code>
+        <a class="feed-open" href="{{ .RelPermalink }}">Open feed</a>
+      </div>
+    </section>
+    {{ end }}
+
+    <div class="prose">
+      {{ .Content }}
+    </div>
+
+</article>
+
+{{ end }}

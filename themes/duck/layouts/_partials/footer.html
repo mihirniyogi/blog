@@ -1,4 +1,4 @@
 <p>Copyright © {{ now.Year }} {{ site.Params.author }}</p>
-<p> Powered by Hugo · Self-hosted · {{- with site.Home.OutputFormats.Get "rss" }}
-    <a href="{{ .RelPermalink }}">RSS</a> {{ end }}
+<p> Powered by Hugo · Self-hosted
+    {{- with site.GetPage "/subscribe" }} · <a href="{{ .RelPermalink }}">RSS</a>{{ end }}
 </p>

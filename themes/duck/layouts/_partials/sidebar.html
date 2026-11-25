@@ -4,20 +4,24 @@
   - Everything else: About, Tags (not on the Tags page), Archive (not on the Posts page), Subscribe.
 */ -}}
 {{- if .IsPage }}
-  {{- if in .TableOfContents "<li" }}
-<aside class="sidebar">
-  {{ partial "sidebar/toc.html" . }}
-</aside>
+  
+  {{- if and (eq .Section "posts") (in .TableOfContents "<li") }}
+  
+  <aside class="sidebar">
+    {{ partial "sidebar/toc.html" . }}
+  </aside>
   {{- end }}
-{{- else }}
-<aside class="sidebar">
-  {{ partial "sidebar/about.html" . }}
-  {{- if ne .Kind "taxonomy" }}
-  {{ partial "sidebar/tags.html" . }}
-  {{- end }}
-  {{- if ne .Kind "section" }}
-  {{ partial "sidebar/archive.html" . }}
-  {{- end }}
-  {{ partial "sidebar/subscribe.html" . }}
-</aside>
+  {{- else }}
+  
+  <aside class="sidebar">
+    {{ partial "sidebar/about.html" . }}
+    {{- if ne .Kind "taxonomy" }}
+      {{ partial "sidebar/tags.html" . }}
+    {{- end }}
+    {{- if ne .Kind "section" }}
+      {{ partial "sidebar/archive.html" . }}
+    {{- end }}
+    {{ partial "sidebar/subscribe.html" . }}
+  </aside>
+
 {{- end }}

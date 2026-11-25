@@ -39,3 +39,6 @@
 
 /* The contents list follows you down a long post */
 .toc-box { position: sticky; top: 20px; }
+
+.rss-link { display: inline-flex; align-items: center; gap: 8px; }
+.rss-link .icon-rss { width: 16px; height: 16px; flex: none; }

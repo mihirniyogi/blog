@@ -14,6 +14,11 @@
     pageRef = '/tags'
     weight = 30
 
+  [[menus.main]]
+    name = 'Subscribe'
+    pageRef = '/subscribe'
+    weight = 40
+
 [module]
   [module.hugoVersion]
     extended = false
