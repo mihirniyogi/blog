@@ -11,8 +11,10 @@
 @import "components/sidebar.css";
 @import "components/subscribe.css";
 @import "components/footer.css";
+@import "components/theme-toggle.css";
 
 :root {
+    color-scheme: light;
     /* Fonts */
     --font: "IBM Plex Sans", system-ui, sans-serif;
     --mono: "JetBrains Mono", ui-monospace, monospace;
@@ -48,6 +50,7 @@
 }
 
 [data-theme="dark"] {
+    color-scheme: dark;
     /* Background and divider colors */
     --page-bg: #111220;
     --surface-bg: #191B2C;

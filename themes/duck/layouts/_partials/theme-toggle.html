@@ -1,0 +1,9 @@
+{{- /*
+  Light/dark switch. Starts hidden: assets/js/theme-toggle.js shows it and sets
+  its label, so visitors without JavaScript never see a button that does nothing.
+*/ -}}
+<button type="button" class="theme-toggle" aria-label="Switch to dark theme" hidden>
+  {{ partial "icon.html" "moon" }}
+  {{ partial "icon.html" "sun" }}
+  <span class="theme-toggle-text">Dark</span>
+</button>

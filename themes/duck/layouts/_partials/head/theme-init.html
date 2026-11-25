@@ -1,0 +1,12 @@
+{{- /*
+  Applies a saved dark-theme choice before the page is drawn, so there's no
+  white flash. Kept inline and tiny on purpose. The storage key ("theme")
+  must match assets/js/theme-toggle.js.
+*/ -}}
+<script>
+  try {
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.dataset.theme = "dark";
+    }
+  } catch (e) {}
+</script>
