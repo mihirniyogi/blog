@@ -1,0 +1,13 @@
+{{- /*
+  RSS autodiscovery: lets feed readers and browser extensions find the feed
+  from any page. The site-wide feed is always listed; tag pages and the Posts
+  page also list their own, narrower feed.
+*/ -}}
+{{- with site.Home.OutputFormats.Get "rss" }}
+<link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
+{{- end }}
+{{- if not .IsHome }}
+  {{- with .OutputFormats.Get "rss" }}
+<link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.LinkTitle }} on {{ site.Title }}">
+  {{- end }}
+{{- end }}

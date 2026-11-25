@@ -1,0 +1,18 @@
+{{- /*
+  Page description, canonical address and link previews.
+  Description order matches Hugo's Open Graph template: the page's own
+  description, then (for posts) its excerpt, then the site description.
+*/ -}}
+{{- $desc := site.Params.description }}
+{{- with .Description }}
+  {{- $desc = . }}
+{{- else }}
+  {{- if and .IsPage .Summary }}
+    {{- $desc = .Summary | plainify | htmlUnescape | strings.TrimSpace }}
+  {{- end }}
+{{- end }}
+<meta name="description" content="{{ $desc | truncate 160 }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="theme-color" content="#2B2F6B">
+{{ partial "opengraph.html" . }}
+{{ partial "twitter_cards.html" . }}
