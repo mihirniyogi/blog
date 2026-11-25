@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section class="not-found">
+
+  <div class="not-found-art" aria-hidden="true">
+    <span class="not-found-trail"><span></span><span></span><span></span></span>
+    {{ partial "icon.html" "duck" }}
+  </div>
+
+  <p class="not-found-code">404</p>
+  <h1 class="not-found-title">This page has flown south.</h1>
+  <p class="not-found-text">The page you're looking for isn't here. It may have moved, or it never existed.</p>
+
+  <div class="not-found-actions">
+    <a class="button button-primary" href="{{ "/" | relURL }}">Go home</a>
+    {{- with site.GetPage "/posts" }}
+    <a class="button" href="{{ .RelPermalink }}">Browse all posts</a>
+    {{- end }}
+  </div>
+
+</section>
+{{ end }}

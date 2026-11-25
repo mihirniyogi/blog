@@ -1,9 +1,12 @@
 {{- /*
   Decides which sidebar boxes each kind of page gets.
+  - 404: none.
   - Single pages (posts): only the contents list, and only if there are headings.
   - Everything else: About, Tags (not on the Tags page), Archive (not on the Posts page), Subscribe.
 */ -}}
-{{- if .IsPage }}
+{{- if eq .Kind "404" }}
+  {{- /* 404: no sidebar, so the message stands alone */}}
+{{- else if .IsPage }}
   
   {{- if and (eq .Section "posts") (in .TableOfContents "<li") }}
   

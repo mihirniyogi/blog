@@ -12,6 +12,8 @@
 @import "components/subscribe.css";
 @import "components/footer.css";
 @import "components/theme-toggle.css";
+@import "components/buttons.css";
+@import "components/not-found.css";
 
 :root {
     color-scheme: light;

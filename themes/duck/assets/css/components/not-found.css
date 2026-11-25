@@ -1,0 +1,52 @@
+/* ------ 404 page (404.html) ------ */
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 0 32px;
+}
+
+/* The duck, facing away, with a dashed trail */
+.not-found-art { display: flex; align-items: center; gap: 10px; color: var(--heading); }
+.not-found .duck { width: 120px; height: 100px; transform: scaleX(-1); }
+
+.not-found-trail { 
+    order: 1;
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-end; 
+    gap: 7px; 
+}
+.not-found-trail span { border-top: 2px dashed var(--border-divider); }
+.not-found-trail span:nth-child(1) { width: 34px; }
+.not-found-trail span:nth-child(2) { width: 52px; }
+.not-found-trail span:nth-child(3) { width: 28px; }
+
+.not-found-code {
+  margin: 28px 0 4px;
+  font-size: 72px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--heading);
+}
+
+.not-found-title {
+  margin: 8px 0 10px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+}
+
+.not-found-text {
+  margin: 0 0 28px;
+  max-width: 460px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.not-found-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
