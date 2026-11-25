@@ -1,3 +1,5 @@
+/* ------ Header band: duck logo, title, tagline ------ */
+
 .band {
     background: var(--band-bg);
     border-bottom: 4px solid var(--bill);
@@ -30,4 +32,10 @@
   width: 52px; height: 44px; flex: none;
   color: var(--band-text);
   --duck-detail: var(--band-bg);
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .band { padding: 18px 20px; }
+  .site-title { font-size: 28px; }
 }

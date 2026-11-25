@@ -8,7 +8,7 @@
     <p class="post-meta">
       Posted on <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
       · {{ .ReadingTime }} min read
-      {{- if .GetTerms "tags" }} · Filed under {{ partial "post-tags.html" (dict "page" .) }}{{ end }}
+      {{- if .GetTerms "tags" }} · Filed under {{ partial "posts/tags.html" (dict "page" .) }}{{ end }}
     </p>
   </header>
 
@@ -17,7 +17,7 @@
   </div>
 
   <div class="end-mark" role="img" aria-label="End of post">
-    {{ partial "icon.html" "duck" }}
+    {{ partial "ui/icon.html" "duck" }}
   </div>
 
   {{/* Older post · Home · Newer post. Always shown, so there's always a way home. */}}

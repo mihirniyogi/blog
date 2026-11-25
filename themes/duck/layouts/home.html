@@ -17,7 +17,7 @@
     <h2 class="entry-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     <div class="entry-summary">{{ .Summary }}</div>
     <p class="entry-meta">
-      {{- if .GetTerms "tags" }}Tags: {{ partial "post-tags.html" (dict "page" .) }} · {{ end -}}
+      {{- if .GetTerms "tags" }}Tags: {{ partial "posts/tags.html" (dict "page" .) }} · {{ end -}}
       <a href="{{ .RelPermalink }}">Read more »</a>
     </p>
 
@@ -26,6 +26,6 @@
 
 {{ end }}
 
-{{ partial "pagination.html" $pager }}
+{{ partial "ui/pagination.html" $pager }}
 
 {{ end }}

@@ -1,6 +1,6 @@
 {{- /*
   Links to a page's tags.
-  Usage: {{ partial "post-tags.html" (dict "page" . "sep" " · ") }}
+  Usage: {{ partial "posts/tags.html" (dict "page" . "sep" " · ") }}
   "sep" is optional and defaults to ", ".
 */ -}}
 {{- $sep := .sep | default ", " -}}

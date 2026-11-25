@@ -1,40 +1,4 @@
-/* ------ Post header ------ */
-
-.post { max-width: 780px; }
-
-/* The "plate" that holds the kicker, title and meta */
-.post-header {
-    margin: 0 0 32px;
-    padding: 22px 26px 20px;
-    background: var(--sidebar-header-bg);
-    border: 1px solid var(--border-divider);
-}
-
-.post-kicker {
-    margin: 0 0 8px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.post-title {
-    margin: 0 0 12px;
-    font-size: 38px;
-    line-height: 1.15;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    color: var(--heading);
-}
-
-.post-meta {
-    margin: 0;
-    font-size: 14px;
-    color: var(--muted);
-}
-
-/* ------ Post body ------ */
+/* ------ Prose: Markdown content (posts and Subscribe page) ------ */
 
 .prose {
     font-size: 17px;
@@ -113,18 +77,7 @@
 .prose .footnotes { margin-top: 36px; font-size: 13px; color: var(--muted); }
 .prose .footnotes hr { border: none; border-top: 1px dotted var(--border-divider); }
 
-/* Older · Home · Newer bar. Three equal-ish columns keep "Home" centred
-   whether or not the older/newer links exist. */
-.post-nav {
-  margin-top: 28px; padding: 14px 16px;
-  background: var(--sidebar-header-bg); border: 1px solid var(--border-divider);
-  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px;
-  font-size: 14px;
+/* Phones */
+@media (max-width: 640px) {
+  .prose h2 { font-size: 21px; }
 }
-.post-nav-home { font-weight: 600; }
-.post-nav-newer { text-align: right; }
-
-/* End of post - duck logo */
-.end-mark { display: flex; align-items: center; gap: 14px; margin-top: 32px; color: var(--muted); }
-.end-mark::before, .end-mark::after { content: ""; flex: 1; border-top: 1px dotted var(--border-divider); }
-.end-mark .duck { width: 26px; height: 22px; }

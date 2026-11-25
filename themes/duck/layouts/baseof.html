@@ -8,11 +8,11 @@
   <div class="site">
 
     <header class="band">
-      {{ partial "header.html" . }}
+      {{ partial "site/header.html" . }}
     </header>
 
     <div class="tabs">
-      {{ partial "menu.html" (dict "menuID" "main" "page" .)}}
+      {{ partial "site/menu.html" (dict "menuID" "main" "page" .)}}
     </div>
 
     <div class="layout">
@@ -26,7 +26,7 @@
     </div>
 
     <footer class="site-footer">
-      {{ partial "footer.html" . }}
+      {{ partial "site/footer.html" . }}
     </footer>
 
   </div>

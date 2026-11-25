@@ -1,3 +1,5 @@
+/* ------ Footer bar ------ */
+
 .site-footer {
     background: var(--nav-footer-strip-bg);
     border-top: 1px solid var(--border-divider);
@@ -12,4 +14,9 @@
 
 .site-footer p {
     margin: 0;
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .site-footer { padding: 14px 20px; }
 }

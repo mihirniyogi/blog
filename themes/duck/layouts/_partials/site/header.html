@@ -1,8 +1,8 @@
 <div class="brand">
-  {{ partial "icon.html" "duck" }}
+  {{ partial "ui/icon.html" "duck" }}
   <div>
     <a class="site-title" href="{{ "/" | relURL }}">{{ site.Title }}</a>
     {{ with site.Params.description }}<p class="tagline">{{ . }}</p>{{ end }}
   </div>
 </div>
-{{ partial "theme-toggle.html" . }}
+{{ partial "site/theme-toggle.html" . }}

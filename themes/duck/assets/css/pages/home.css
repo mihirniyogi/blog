@@ -1,3 +1,5 @@
+/* ------ Home page (home.html) ------ */
+
 .entry {
   padding-bottom: 28px; margin-bottom: 28px;
   border-bottom: 1px dotted var(--border-divider);
@@ -13,3 +15,8 @@
 .entry-summary p { margin: 0 0 14px; }
 .entry-summary p:last-child { margin-bottom: 0; }
 .entry-meta { margin: 0; font-size: 13px; color: var(--muted); }
+
+/* Phones */
+@media (max-width: 640px) {
+  .entry-title { font-size: 24px; }
+}

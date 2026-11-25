@@ -1,3 +1,5 @@
+/* ------ Callouts (render-blockquote.html) ------ */
+
 .callout { border: 1px solid; padding: 14px 20px 4px; margin: 1.5em 0; font-size: 16px; line-height: 1.65; }
 .callout p { margin: 0 0 .8em; }
 .callout .callout-label {

@@ -1,5 +1,5 @@
 {{ define "main" }}
 <h1 class="list-title">{{ .Title }}</h1>
 <p class="list-intro">{{ len .RegularPages }} {{ cond (eq (len .RegularPages) 1) "post" "posts" }}, newest first.</p>
-{{ partial "post-list.html" .RegularPages }}
+{{ partial "posts/list.html" .RegularPages }}
 {{ end }}

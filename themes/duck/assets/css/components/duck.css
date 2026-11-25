@@ -1,3 +1,5 @@
+/* ------ The duck icon ------ */
+
 .duck-bill { fill: var(--bill); }
 .duck-eye  { fill: var(--duck-detail, var(--surface-bg)); }
 .duck-wing {

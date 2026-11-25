@@ -1,4 +1,4 @@
-/* ------ Headings on list pages (Posts, tag pages) ------ */
+/* ------ List page headings (section.html, term.html, taxonomy.html) ------ */
 
 .list-title {
   margin: 0 0 6px;
@@ -13,4 +13,9 @@
   margin: 0 0 28px;
   font-size: 15px;
   color: var(--muted);
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .list-title { font-size: 28px; }
 }

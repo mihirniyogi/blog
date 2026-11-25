@@ -1,0 +1,30 @@
+/* ------ Element defaults and utilities ------ */
+
+body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--text);
+    font-family: var(--font);
+    line-height: 1.7;
+}
+
+a {
+    color: var(--accent);
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+/* Selection */
+::selection {
+    background: var(--select-bg);
+    color: var(--select-text);
+}
+
+/* Hidden visually, still read by screen readers */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}

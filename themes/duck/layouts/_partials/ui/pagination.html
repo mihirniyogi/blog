@@ -1,6 +1,6 @@
 {{- /*
   Numbered pagination for a list.
-  Usage: {{ partial "pagination.html" $pager }}  (where $pager := .Paginate ...)
+  Usage: {{ partial "ui/pagination.html" $pager }}  (where $pager := .Paginate ...)
   Page 1 holds the newest posts, so "Previous" moves towards newer posts.
 */ -}}
 {{- if gt .TotalPages 1 }}

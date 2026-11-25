@@ -1,0 +1,39 @@
+/* ------ Post header plate: kicker, title, meta (posts; the Subscribe page borrows it) ------ */
+
+/* The "plate" that holds the kicker, title and meta */
+.post-header {
+    margin: 0 0 32px;
+    padding: 22px 26px 20px;
+    background: var(--sidebar-header-bg);
+    border: 1px solid var(--border-divider);
+}
+
+.post-kicker {
+    margin: 0 0 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.post-title {
+    margin: 0 0 12px;
+    font-size: 38px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--heading);
+}
+
+.post-meta {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .post-header { padding: 18px 18px 16px; }
+  .post-title { font-size: 30px; }
+}

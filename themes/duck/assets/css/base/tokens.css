@@ -1,0 +1,69 @@
+/* ------ Design tokens: fonts and colours. Light in :root, dark in [data-theme="dark"] ------ */
+
+:root {
+    color-scheme: light;
+    /* Fonts */
+    --font: "IBM Plex Sans", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+
+    /* Background and divider colors */
+    --page-bg: #E9EAF4;          /* bg outside main content */
+    --surface-bg: #FFFFFF;       /* bg of main content */
+    --band-bg: #2B2F6B;          /* header band*/
+    --nav-footer-strip-bg: #DFE1F0;     /* navigation strip bg*/
+    --border-divider: #CDD0E4;   /* borders, dividers */
+    --sidebar-header-bg: #F0F1F8; 
+    --quote-bg: #F5F5FA;  
+
+    /* Text colors */
+    --band-text: #FFFFFF;   /* text color within header band, i.e. site title */
+    --band-muted: #C9CBEA;  /* muted text color within header band, i.e. site description */
+    --text: #1D1F33;        /* body text */
+    --text-soft: #30334A;   /* intros, quotes */
+    --muted: #585B74;       /* dates, meta, counts */
+    --heading: #23265A;     /* headings and post titles */
+    --accent: #3A3FA8;      /* links */
+    --accent-hover: #2B2F85;
+
+    /* Duck themed colors */
+    --bill: #E8A530;         /* yellow stripe and tab marker */
+    --select-bg: #F6D58A;    /* yellow background for selected items */
+    --select-text: #1A1A1A;  /* text color for selected items */
+
+    /* Callouts */
+    --note-bg: #EFF4FA;  --note-border: #BFD0E3;  --note-label: #25496F;
+    --tip-bg: #EDF6F0;   --tip-border: #B5D4BF;   --tip-label: #25603A;
+    --warn-bg: #FCF2E7;  --warn-border: #E7C5A2;  --warn-label: #8A4A0F;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+    /* Background and divider colors */
+    --page-bg: #111220;
+    --surface-bg: #191B2C;
+    --band-bg: #14163A;
+    --nav-footer-strip-bg: #20223A;
+    --border-divider: #2E3150;
+    --sidebar-header-bg: #222439;
+    --quote-bg: #141526;
+
+    /* Text colors */
+    --band-text: #EDF2F7;
+    --band-muted: #A5A8D6;
+    --text: #DEDFEE;
+    --text-soft: #C8C9DC;
+    --muted: #9C9EB9;
+    --heading: #E5E6F5;
+    --accent: #A9ADF5;
+    --accent-hover: #C8CBFA;
+
+    /* Duck themed colors */
+    --bill: #D99A2E;         /* yellow stripe and tab marker */
+    --select-bg: #6B5420;    /* yellow background for selected items */
+    --select-text: #FFFFFF;  /* text color for selected items */
+
+    /* Callouts */
+    --note-bg: #1A2431;  --note-border: #33465C;  --note-label: #A9C6E6;
+    --tip-bg: #17241D;   --tip-border: #2E4A3A;   --tip-label: #97CDA8;
+    --warn-bg: #2A2017;  --warn-border: #5C4127;  --warn-label: #F0B37A;
+}
