@@ -1,11 +1,10 @@
-+++
-title = 'Subscribe'
-layout = 'subscribe'
-description = 'Get new posts automatically, without email or social media.'
-
-[build]
-  list = 'never'
-+++
+---
+title: Subscribe
+layout: subscribe
+description: Get new posts automatically, without email or social media.
+build:
+  list: never
+---
 
 ## What's RSS?
 

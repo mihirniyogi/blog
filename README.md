@@ -22,7 +22,7 @@ The source code for [blog.mihirniyogi.com](https://blog.mihirniyogi.com): a smal
 
 ### Requirements
 
-- **Hugo, standard edition, v0.146.0 or newer.** The theme uses Hugo's newer template layout from v0.146; the minimum is also set in `themes/duck/hugo.toml`.
+- **Hugo, standard edition, v0.146.0 or newer.** The theme uses Hugo's newer template layout from v0.146; the minimum is also set in `themes/duck/hugo.yaml`.
 - The Rock 5B should run the **same Hugo version** as the laptop, so a site that builds locally also builds there. Check with `hugo version` on both.
 - No Node.js or other tools are needed. Hugo bundles the CSS and JavaScript itself.
 
@@ -37,7 +37,7 @@ hugo --minify         # build the real site into public/
 
 ### Site settings
 
-The root `hugo.toml` holds the site-wide settings:
+The root `hugo.yaml` holds the site-wide settings:
 
 | Setting | What it does |
 |---|---|
@@ -46,9 +46,9 @@ The root `hugo.toml` holds the site-wide settings:
 | `params.author` | Name in the footer copyright line |
 | `params.about` | Text of the sidebar's About box |
 | `pagination.pagerSize` | Posts per page on the home page (5) |
-| `capitalizeListTitles = false` | Keeps tag names lowercase; list pages take their titles from `content/posts/_index.md` and `content/tags/_index.md` |
+| `capitalizeListTitles: false` | Keeps tag names lowercase; list pages take their titles from `content/posts/_index.md` and `content/tags/_index.md` |
 
-The navigation menu (Home, Posts, Tags, Subscribe) is defined in `themes/duck/hugo.toml`.
+The navigation menu (Home, Posts, Tags, Subscribe) is defined in `themes/duck/hugo.yaml`.
 
 ### Project structure
 
@@ -60,7 +60,7 @@ The navigation menu (Home, Posts, Tags, Subscribe) is defined in `themes/duck/hu
 │   ├── tags/_index.md      ← title of the Tags page
 │   └── subscribe.md        ← the Subscribe (RSS) page
 ├── themes/duck/            ← the theme: layouts, CSS, JavaScript, icons, fonts
-├── hugo.toml               ← site settings
+├── hugo.yaml               ← site settings
 ├── LICENSE                 ← MIT licence for the code
 └── README.md
 ```

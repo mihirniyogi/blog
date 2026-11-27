@@ -1,0 +1,13 @@
+baseURL: https://blog.mihirniyogi.com/
+locale: en-us
+title: "Mihir's Blog"
+theme: duck
+capitalizeListTitles: false
+
+pagination:
+  pagerSize: 5
+
+params:
+  description: Notes from a home server
+  author: Mihir Niyogi
+  about: "About me? Ask me in person :)"

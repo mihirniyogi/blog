@@ -1,8 +1,8 @@
-+++
-date = '2026-11-26T01:25:23+08:00'
-draft = true
-title = 'Code Test'
-+++
+---
+date: '2026-11-26T01:25:23+08:00'
+draft: true
+title: Code Test
+---
 
 !more
 

@@ -150,4 +150,4 @@ Render hooks in `layouts/_markup/` change how Hugo turns certain Markdown into H
 3. Put its styles in `assets/css/pages/<page>.css` and import that file in `main.css`.
 4. If it should have a sidebar, add a rule for it in `sidebar.html`. Single pages have none by default.
 
-**A menu item:** add an entry to `[menus]` in `themes/duck/hugo.toml`, with `name`, `pageRef` and `weight`. A lower weight comes first.
+**A menu item:** add an entry under `menus.main` in `themes/duck/hugo.yaml`, with `name`, `pageRef` and `weight`. A lower weight comes first.
