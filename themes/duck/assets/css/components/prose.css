@@ -28,7 +28,37 @@
 .prose ul, .prose ol { margin: 0 0 1.2em; padding-left: 1.4em; }
 .prose li { margin: .3em 0; }
 .prose strong { font-weight: 600; }
-.prose img { max-width: 100%; height: auto; }
+
+/* Images: fit the column, and stop tall images taking over the page */
+.prose img {
+  display: block;
+  max-width: 100%;
+  max-height: 560px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Images with captions (the editor inserts these as <figure>) */
+.prose figure { margin: 1.8em 0; }
+.prose figure img { border: 1px solid var(--border-divider); }
+
+.prose figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Picture blocks from the editor (static/admin/custom-blocks.js).
+   Size sets the max width; "full" has no cap. */
+.prose .picture { margin-inline: auto; }
+.prose .picture img {
+  width: 100%;
+  max-height: none;
+}
+.prose .picture-small  { max-width: 320px; }
+.prose .picture-medium { max-width: 480px; }
+.prose .picture-large  { max-width: 640px; }
 
 /* Code inline, blocks */
 .prose code {

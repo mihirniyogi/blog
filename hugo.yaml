@@ -12,3 +12,8 @@ params:
   description: Notes from a home server
   author: Mihir Niyogi
   about: "About me? Ask me in person :)"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
