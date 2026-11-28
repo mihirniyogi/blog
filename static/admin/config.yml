@@ -14,10 +14,16 @@ collections:
     label: Posts
     label_singular: Post
     folder: content/posts
+    editor:
+      preview: false
     create: true
     extension: md
     format: yaml-frontmatter
     slug: "{{slug}}"
+    view_filters:
+      - label: Drafts
+        field: draft
+        pattern: true
     sortable_fields: [date, title]
     summary: "{{title}} — {{date}}"
     fields:
@@ -29,5 +35,8 @@ collections:
           hint: "Lowercase, e.g. pilates, cafe" }
       - { name: summary, label: Summary, widget: text, required: false,
           hint: "Short preview shown on the home page and in search results (about 1-2 sentences)." }
-      - { name: body,    label: Body,  widget: markdown }
+      - label: Body
+        name: body
+        widget: markdown
+        editor_components: [picture, callout, code-block]
       
