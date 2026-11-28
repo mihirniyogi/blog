@@ -6,6 +6,7 @@ backend:
 site_url: https://blog.mihirniyogi.com
 display_url: https://blog.mihirniyogi.com
 
+# Fallback in case post-specific images fail to save
 media_folder: static/images
 public_folder: /images
 
@@ -14,6 +15,9 @@ collections:
     label: Posts
     label_singular: Post
     folder: content/posts
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
     editor:
       preview: false
     create: true
