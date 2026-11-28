@@ -3,6 +3,7 @@ locale: en-us
 title: "Mihir's Blog"
 theme: duck
 capitalizeListTitles: false
+timezone: Asia/Singapore
 
 pagination:
   pagerSize: 5
