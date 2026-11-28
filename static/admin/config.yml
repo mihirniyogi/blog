@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: mihirniyogi/blog
+  branch: main
+
+site_url: https://blog.mihirniyogi.com
+display_url: https://blog.mihirniyogi.com
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - name: posts
+    label: Posts
+    label_singular: Post
+    folder: content/posts
+    create: true
+    extension: md
+    format: yaml-frontmatter
+    slug: "{{slug}}"
+    sortable_fields: [date, title]
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { name: title,   label: Title, widget: string }
+      - { name: date,    label: Date,  widget: datetime }
+      - { name: draft,   label: Draft, widget: boolean, default: true,
+          hint: "Drafts are not published. Untick to publish." }
+      - { name: tags,    label: Tags,  widget: list, required: false,
+          hint: "Lowercase, e.g. pilates, cafe" }
+      - { name: summary, label: Summary, widget: text, required: false,
+          hint: "Short preview shown on the home page and in search results (about 1-2 sentences)." }
+      - { name: body,    label: Body,  widget: markdown }
+      
